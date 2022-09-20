@@ -1,0 +1,7 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>no.kantega</groupId>
+    <artifactId>mer-maven-to</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+</project>

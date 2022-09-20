@@ -35,5 +35,6 @@
     <modules>
       <module>en</module>
       <module>to</module>
+      <module>tre</module>
     </modules>
 </project>

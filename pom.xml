@@ -37,4 +37,51 @@
       <module>to</module>
       <module>tre</module>
     </modules>
+
+    <profiles>
+      <profile>
+        <id>owasp-dependency-check</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.owasp</groupId>
+                    <artifactId>dependency-check-maven</artifactId>
+                    <version>7.2.1</version>
+                    <configuration>
+                        <autoUpdate>true</autoUpdate>
+                        <!--
+                            See https://jeremylong.github.io/DependencyCheck/dependency-check-maven/configuration.html
+                            for documentation of the configuration
+                        -->
+                        <failBuildOnCVSS>7</failBuildOnCVSS>
+                        <suppressionFile>owasp-suppression.xml</suppressionFile>
+                        <!--
+                            See https://jeremylong.github.io/DependencyCheck/analyzers/index.html for list
+                        -->
+                        <archiveAnalyzerEnabled>false</archiveAnalyzerEnabled>
+                        <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
+                        <jarAnalyzerEnabled>true</jarAnalyzerEnabled>
+                        <retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>
+                        <nodeAnalyzerEnabled>false</nodeAnalyzerEnabled>
+                        <nodeAuditAnalyzerEnabled>false</nodeAuditAnalyzerEnabled>
+                        <nugetconfAnalyzerEnabled>false</nugetconfAnalyzerEnabled>
+                        <nuspecAnalyzerEnabled>false</nuspecAnalyzerEnabled>
+                        <opensslAnalyzerEnabled>false</opensslAnalyzerEnabled>
+                        <rubygemsAnalyzerEnabled>false</rubygemsAnalyzerEnabled>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>
+                                validate
+                            </phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+      </profile>
+    </profiles>
 </project>

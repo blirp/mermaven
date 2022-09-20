@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <suppress>
+        <notes>
+            <![CDATA[
+                No fix exists.
+                We don't use Java serialization
+                    => suppress
+                https://github.com/spring-projects/spring-framework/issues/24434
+            ]]>
+        </notes>
+        <cve>CVE-2016-1000027</cve>
+    </suppress>
+</suppressions>
